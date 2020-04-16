@@ -1,19 +1,12 @@
 pipeline {
-  agent {
-    docker 'python:3.5.1'
-  }
+  agent any
   environment {
     DISABLE_AUTH = 'true'
   }
   stages {
     stage('build') {
       steps {
-        sh 'python --version'
-      }
-    }
-    stage('Build') {
-      steps {
-        sh 'npm install'
+        sh 'find --version'
       }
     }
     stage('build2') {
